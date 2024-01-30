@@ -1,0 +1,27 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "File Manager using Node.js APIs.",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/L1senochek/file-manager.git"
+  },
+  "keywords": [
+    "nodejs",
+    "fileManager"
+  ],
+  "author": "l1senochek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/L1senochek/file-manager/issues"
+  },
+  "homepage": "https://github.com/L1senochek/file-manager#readme"
+}
