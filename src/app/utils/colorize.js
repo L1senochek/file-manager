@@ -7,6 +7,7 @@ const colorize = (text, color) => {
     purple: '\x1b[38;5;99m',
     magenta: '\x1b[35m',
     brightGreen: '\x1b[92m',
+    orange: '\x1b[38;5;208m',
   };
   const colorCode = colors[color] || colors.reset;
 

@@ -1,6 +1,7 @@
 import greeting from './greeting/greeting.js';
 import readline from 'readline';
 import colorize from './utils/colorize.js';
+import currentDirectory from './currentDirectory/currentDirectory.js';
 
 const app = async () => {
   const username = process.env.npm_config_username;
@@ -9,7 +10,9 @@ const app = async () => {
     output: process.stdout,
   });
   const processCommand = (command) =>
-    console.log(colorize('Command: ', 'brightGreen') + command);
+    console.log(
+      colorize('Command: ', 'brightGreen') + colorize(command, 'magenta')
+    );
 
   await greeting();
 
@@ -20,7 +23,7 @@ const app = async () => {
     const command = input.trim();
     processCommand(command);
 
-    //
+    currentDirectory();
 
     readLine.prompt();
   });
