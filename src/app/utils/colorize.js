@@ -4,7 +4,9 @@ const colorize = (text, color) => {
     red: '\x1b[31m',
     yellow: '\x1b[33m',
     cyan: '\x1b[36m',
+    purple: '\x1b[38;5;99m',
     magenta: '\x1b[35m',
+    brightGreen: '\x1b[92m',
   };
   const colorCode = colors[color] || colors.reset;
 
