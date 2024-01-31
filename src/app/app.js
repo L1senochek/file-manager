@@ -25,6 +25,10 @@ const app = async () => {
 
     currentDirectory();
 
+    if (command === '.exit') {
+      readLine.close();
+    }
+
     readLine.prompt();
   });
 
