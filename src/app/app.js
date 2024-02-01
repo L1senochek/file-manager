@@ -24,14 +24,13 @@ const app = async () => {
     const command = input.trim();
     processCommand(command);
 
-    currentDirectory();
-
     if (command === '.exit') {
       readLine.close();
     } else {
       commandOptions(command);
     }
 
+    currentDirectory();
     readLine.prompt();
   });
 
