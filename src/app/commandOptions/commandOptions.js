@@ -1,7 +1,7 @@
-import changeDirectory from '../changeDirectory/changeDirectory.js';
-import commandCat from '../commandCat/commandCat.js';
-import commandUp from '../commandUp/commandUp.js';
-import listOfAllFiles from '../listOfAllFiles/listOfAllFiles.js';
+import up from '../commandsNavigation/up/up.js';
+import changeDirectory from '../commandsNavigation/changeDirectory/changeDirectory.js';
+import listOfAllFiles from '../commandsNavigation/listOfAllFiles/listOfAllFiles.js';
+import cat from '../commandsBasic/commandCat/cat.js';
 import colorize from '../utils/colorize.js';
 
 const commandOptions = async (command) => {
@@ -9,7 +9,7 @@ const commandOptions = async (command) => {
 
   switch (operation) {
     case 'up':
-      await commandUp();
+      await up();
       break;
     case 'cd':
       if (args.length === 1) {
@@ -23,7 +23,7 @@ const commandOptions = async (command) => {
       break;
     case 'cat':
       if (args.length === 1) {
-        await commandCat(args[0]);
+        await cat(args[0]);
       } else {
         console.log(colorize('Invalid input', 'red'));
       }

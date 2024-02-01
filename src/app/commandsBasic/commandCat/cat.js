@@ -1,8 +1,7 @@
 import fs from 'fs';
-import readline from 'readline';
-import colorize from '../utils/colorize.js';
+import colorize from '../../utils/colorize.js';
 
-const commandCat = async (filePath) => {
+const cat = async (filePath) => {
   try {
     console.log(filePath);
     const readStream = fs.createReadStream(filePath, { encoding: 'utf-8' });
@@ -14,4 +13,4 @@ const commandCat = async (filePath) => {
   }
 };
 
-export default commandCat;
+export default cat;

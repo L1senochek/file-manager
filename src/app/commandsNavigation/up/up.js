@@ -1,7 +1,7 @@
 import path from 'path';
-import colorize from '../utils/colorize.js';
+import colorize from '../../utils/colorize.js';
 
-const commandUp = async () => {
+const up = async () => {
   try {
     const currentDirectory = process.cwd();
     const parentDirectory = path.resolve(currentDirectory, '..');
@@ -15,4 +15,4 @@ const commandUp = async () => {
   }
 };
 
-export default commandUp;
+export default up;

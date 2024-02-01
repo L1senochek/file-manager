@@ -1,4 +1,4 @@
-import colorize from '../utils/colorize.js';
+import colorize from '../../utils/colorize.js';
 
 const changeDirectory = async (targetDirectory) => {
   try {

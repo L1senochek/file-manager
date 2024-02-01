@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import colorize from '../utils/colorize.js';
+import colorize from '../../utils/colorize.js';
 
 const listOfAllFiles = async () => {
   try {
