@@ -28,9 +28,8 @@ const listOfAllFiles = async () => {
 
     console.log('List of all files:');
     console.table(tableData);
-  } catch (error) {
+  } catch {
     console.log(colorize('Operation failed', 'red'));
-    console.error(colorize('Error:', 'red'), error.message);
   }
 };
 

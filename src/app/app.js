@@ -16,6 +16,7 @@ const app = async () => {
     );
 
   await greeting();
+  currentDirectory();
 
   readLine.setPrompt(colorize('> ', 'brightGreen'));
   readLine.prompt();
