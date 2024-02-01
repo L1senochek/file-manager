@@ -2,6 +2,7 @@ import greeting from './greeting/greeting.js';
 import readline from 'readline';
 import colorize from './utils/colorize.js';
 import currentDirectory from './currentDirectory/currentDirectory.js';
+import commandOptions from './commandOptions/commandOptions.js';
 
 const app = async () => {
   const username = process.env.npm_config_username;
@@ -27,6 +28,8 @@ const app = async () => {
 
     if (command === '.exit') {
       readLine.close();
+    } else {
+      commandOptions(command);
     }
 
     readLine.prompt();
