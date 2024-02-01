@@ -1,4 +1,5 @@
 import changeDirectory from '../changeDirectory/changeDirectory.js';
+import commandCat from '../commandCat/commandCat.js';
 import commandUp from '../commandUp/commandUp.js';
 import listOfAllFiles from '../listOfAllFiles/listOfAllFiles.js';
 import colorize from '../utils/colorize.js';
@@ -19,6 +20,13 @@ const commandOptions = async (command) => {
       break;
     case 'ls':
       listOfAllFiles();
+      break;
+    case 'cat':
+      if (args.length === 1) {
+        await commandCat(args[0]);
+      } else {
+        console.log(colorize('Invalid input', 'red'));
+      }
       break;
     default:
       console.log(colorize('Invalid input', 'red'));

@@ -5,7 +5,7 @@ const changeDirectory = async (targetDirectory) => {
     process.chdir(targetDirectory);
     console.log(colorize('Successfully!', 'brightGreen'));
   } catch {
-    console.log(colorize('Invalid input', 'red'));
+    console.log(colorize('Operation failed', 'red'));
   }
 };
 
