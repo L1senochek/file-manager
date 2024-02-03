@@ -4,6 +4,7 @@ import listOfAllFiles from '../commandsNavigation/listOfAllFiles/listOfAllFiles.
 import cat from '../commandsBasic/cat/cat.js';
 import colorize from '../utils/colorize.js';
 import add from '../commandsBasic/add/add.js';
+import renameCommand from '../commandsBasic/rename/rename.js';
 
 const commandOptions = async (command) => {
   const [operation, ...args] = command.split(' ');
@@ -32,6 +33,13 @@ const commandOptions = async (command) => {
     case 'add':
       if (args.length === 1) {
         await add(args[0]);
+      } else {
+        console.log(colorize('Invalid input', 'red'));
+      }
+      break;
+    case 'rn':
+      if (args.length === 2) {
+        await renameCommand(args[0], args[1]);
       } else {
         console.log(colorize('Invalid input', 'red'));
       }

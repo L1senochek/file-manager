@@ -8,13 +8,16 @@ const add = async (fileName) => {
     const filePath = path.join(currentDirectory, fileName);
     const content = '';
 
-    fs.writeFile(filePath, content, { flag: 'wx' }, (error) => {
-      if (error) {
-        console.log(colorize('Operation failed', 'red'));
-      } else {
-        console.log(colorize(`File created successfully.`, 'green'));
+    const writeStream = fs.writeFile(
+      filePath,
+      content,
+      { flag: 'wx' },
+      (error) => {
+        if (error) {
+          console.log(colorize('Operation failed', 'red'));
+        }
       }
-    });
+    );
   } catch (error) {
     console.log(colorize('Operation failed', 'red'));
   }
