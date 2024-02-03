@@ -2,13 +2,13 @@ import fs from 'fs/promises';
 import path from 'path';
 import colorize from '../../utils/colorize.js';
 
-const renameCommand = async (oldFilePath, newFileName) => {
+const renameCommand = async (pathToFile, newFileName) => {
   try {
-    const currentDirectory = path.dirname(oldFilePath);
+    const currentDirectory = path.dirname(pathToFile);
     const newFullPath = path.join(currentDirectory, newFileName);
 
-    await fs.access(oldFilePath);
-    await fs.rename(oldFilePath, newFullPath);
+    await fs.access(pathToFile);
+    await fs.rename(pathToFile, newFullPath);
   } catch {
     console.log(colorize('Operation failed', 'red'));
   }
