@@ -14,6 +14,7 @@ import decompress from '../commandsZip/decompress/decompress.js';
 import osEOL from '../commandsOperatingSystemInfo/EOL/EOL.js';
 import osCpus from '../commandsOperatingSystemInfo/cpus/cpus.js';
 import osHomeDir from '../commandsOperatingSystemInfo/homedir/homedir.js';
+import osUsername from '../commandsOperatingSystemInfo/username/username.js';
 
 const commandOptions = async (command) => {
   const [operation, ...args] = command.split(' ');
@@ -70,6 +71,9 @@ const commandOptions = async (command) => {
           break;
         case '--homedir':
           osHomeDir();
+          break;
+        case '--username':
+          osUsername();
           break;
         default:
           console.log(colorize('Invalid input', 'red'));
