@@ -11,6 +11,7 @@ import remove from '../commandsBasic/remove/remove.js';
 import hash from '../commandsHash/hash/hash.js';
 import compress from '../commandsZip/compress/compress.js';
 import decompress from '../commandsZip/decompress/decompress.js';
+import osEOL from '../commandsOperatingSystemInfo/EOL/EOL.js';
 
 const commandOptions = async (command) => {
   const [operation, ...args] = command.split(' ');
@@ -56,6 +57,15 @@ const commandOptions = async (command) => {
       args.length === 1
         ? await remove(args[0])
         : console.log(colorize('Invalid input', 'red'));
+      break;
+    case 'os':
+      switch (args[0]) {
+        case '--EOL':
+          osEOL();
+          break;
+        default:
+          console.log(colorize('Invalid input', 'red'));
+      }
       break;
     case 'hash':
       args.length === 1
