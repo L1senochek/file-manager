@@ -7,9 +7,7 @@ const up = async () => {
     const parentDirectory = path.resolve(currentDirectory, '..');
     const rootDirectory = path.parse(parentDirectory).root;
 
-    if (currentDirectory !== rootDirectory) {
-      process.chdir(parentDirectory);
-    }
+    currentDirectory !== rootDirectory ? process.chdir(parentDirectory) : null;
   } catch {
     console.error(colorize('Operation failed', 'red'));
   }

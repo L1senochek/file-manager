@@ -5,8 +5,10 @@ const greeting = async () => {
 
   if (!username || username === 'true') {
     console.error(
-      colorize('The username is not specified. Use ', 'red') +
-        colorize('"npm start -- --username=your_username"', 'yellow')
+      colorize('The username is not specified. Use: ', 'red') +
+        colorize('"npm start -- --username=your_username"', 'yellow') +
+        colorize(' or ', 'red') +
+        colorize('"npm start --username=your_username"', 'yellow')
     );
     process.exit(1);
   } else if (typeof username === 'string' && username !== 'true') {

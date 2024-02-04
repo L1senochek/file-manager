@@ -25,11 +25,7 @@ const app = async () => {
     const command = input.trim();
     processCommand(command);
 
-    if (command === '.exit') {
-      readLine.close();
-    } else {
-      commandOptions(command);
-    }
+    command === '.exit' ? readLine.close() : commandOptions(command);
 
     currentDirectory();
     readLine.prompt();

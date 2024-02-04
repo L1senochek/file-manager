@@ -15,10 +15,10 @@ const listOfAllFiles = async () => {
       })
     );
 
-    const sortedFiles = files.sort((a, b) => {
-      if (a.isDirectory && !b.isDirectory) return -1;
-      if (!a.isDirectory && b.isDirectory) return 1;
-      return a.name.localeCompare(b.name);
+    const sortedFiles = files.sort((firstFile, secondFile) => {
+      if (firstFile.isDirectory && !secondFile.isDirectory) return -1;
+      if (!firstFile.isDirectory && secondFile.isDirectory) return 1;
+      return firstFile.name.localeCompare(secondFile.name);
     });
 
     const tableData = sortedFiles.map((entry) => ({
