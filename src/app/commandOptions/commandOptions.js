@@ -12,6 +12,7 @@ import hash from '../commandsHash/hash/hash.js';
 import compress from '../commandsZip/compress/compress.js';
 import decompress from '../commandsZip/decompress/decompress.js';
 import osEOL from '../commandsOperatingSystemInfo/EOL/EOL.js';
+import osCpus from '../commandsOperatingSystemInfo/cpus/cpus.js';
 
 const commandOptions = async (command) => {
   const [operation, ...args] = command.split(' ');
@@ -62,6 +63,9 @@ const commandOptions = async (command) => {
       switch (args[0]) {
         case '--EOL':
           osEOL();
+          break;
+        case '--cpus':
+          osCpus();
           break;
         default:
           console.log(colorize('Invalid input', 'red'));
