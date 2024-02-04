@@ -13,6 +13,7 @@ import compress from '../commandsZip/compress/compress.js';
 import decompress from '../commandsZip/decompress/decompress.js';
 import osEOL from '../commandsOperatingSystemInfo/EOL/EOL.js';
 import osCpus from '../commandsOperatingSystemInfo/cpus/cpus.js';
+import osHomeDir from '../commandsOperatingSystemInfo/homedir/homedir.js';
 
 const commandOptions = async (command) => {
   const [operation, ...args] = command.split(' ');
@@ -66,6 +67,9 @@ const commandOptions = async (command) => {
           break;
         case '--cpus':
           osCpus();
+          break;
+        case '--homedir':
+          osHomeDir();
           break;
         default:
           console.log(colorize('Invalid input', 'red'));
