@@ -9,7 +9,8 @@ import copy from '../commandsBasic/copy/copy.js';
 import moveCommand from '../commandsBasic/move/move.js';
 import remove from '../commandsBasic/remove/remove.js';
 import hash from '../commandsHash/hash/hash.js';
-import compress from '../commandsZip/compress.js';
+import compress from '../commandsZip/compress/compress.js';
+import decompress from '../commandsZip/decompress/decompress.js';
 
 const commandOptions = async (command) => {
   const [operation, ...args] = command.split(' ');
@@ -64,6 +65,11 @@ const commandOptions = async (command) => {
     case 'compress':
       args.length === 2
         ? await compress(args[0], args[1])
+        : console.log(colorize('Invalid input', 'red'));
+      break;
+    case 'decompress':
+      args.length === 2
+        ? await decompress(args[0], args[1])
         : console.log(colorize('Invalid input', 'red'));
       break;
     default:
