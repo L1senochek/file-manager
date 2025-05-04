@@ -1,5 +1,5 @@
 import fs from 'fs';
-import colorize from '../../utils/colorize.js';
+import { colorize } from "../../utils/index.js";
 
 const cat = async (filePath) => {
   try {

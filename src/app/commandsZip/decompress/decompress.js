@@ -1,6 +1,6 @@
 import fs from 'fs';
 import zlib from 'zlib';
-import colorize from '../../utils/colorize.js';
+import { colorize } from "../../utils/index.js";
 
 const decompress = async (pathToFile, pathToDestination) => {
   try {

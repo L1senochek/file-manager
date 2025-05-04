@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import colorize from '../../utils/colorize.js';
+import { colorize } from "../../utils/index.js";
 
 const renameCommand = async (pathToFile, newFileName) => {
   try {

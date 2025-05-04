@@ -1,6 +1,5 @@
-import colorize from '../../utils/colorize.js';
-import copy from '../copy/copy.js';
-import remove from '../remove/remove.js';
+import { colorize } from "../../utils/index.js";
+import { copy, remove } from '../../commandOptions/commands.js';
 
 const move = async (pathToFile, pathToNewDirectory) => {
   try {

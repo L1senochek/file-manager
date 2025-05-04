@@ -1,5 +1,5 @@
 import path from 'path';
-import colorize from '../../utils/colorize.js';
+import { colorize } from "../../utils/index.js";
 
 const up = async () => {
   try {

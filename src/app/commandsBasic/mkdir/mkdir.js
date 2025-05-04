@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import colorize from '../../utils/colorize.js';
+import { colorize } from "../../utils/index.js";
 
 const mkdir = async (directoryName) => {
     try {

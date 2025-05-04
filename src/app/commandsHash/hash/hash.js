@@ -1,6 +1,6 @@
 import fs from 'fs';
 import crypto from 'crypto';
-import colorize from '../../utils/colorize.js';
+import { colorize } from "../../utils/index.js";
 
 const hash = async (fileToPath) => {
   try {
@@ -16,7 +16,10 @@ const hash = async (fileToPath) => {
         resolve(fileHash);
       });
 
-      stream.on('error', (error) => reject(error));
+      stream.on('error', () => {
+        console.log(colorize('Operation failed', 'red'));
+        resolve();
+      });
     });
   } catch {
     console.log(colorize('Operation failed', 'red'));

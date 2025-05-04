@@ -1,10 +1,12 @@
-import greeting from './greeting/greeting.js';
+import os from 'os';
 import readline from 'readline';
-import colorize from './utils/colorize.js';
+import { colorize } from "./utils/index.js";
+import greeting from './greeting/greeting.js';
 import currentDirectory from './currentDirectory/currentDirectory.js';
 import commandOptions from './commandOptions/commandOptions.js';
 
 const app = async () => {
+  process.chdir(os.homedir());
   const username = process.env.npm_config_username;
   const readLine = readline.createInterface({
     input: process.stdin,
@@ -25,7 +27,7 @@ const app = async () => {
     const command = input.trim();
     processCommand(command);
 
-    command === '.exit' ? readLine.close() : commandOptions(command);
+    command === '.exit' ? readLine.close() : await commandOptions(command);
 
     currentDirectory();
     readLine.prompt();

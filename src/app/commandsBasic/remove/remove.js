@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import colorize from '../../utils/colorize.js';
+import { colorize } from "../../utils/index.js";
 
 const remove = async (filePath) => {
   try {
