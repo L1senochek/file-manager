@@ -7,7 +7,7 @@ const hash = async (fileToPath) => {
     const stream = fs.createReadStream(fileToPath);
     const hash = crypto.createHash('sha256');
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       stream.on('data', (chunk) => hash.update(chunk));
 
       stream.on('end', () => {
