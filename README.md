@@ -46,6 +46,12 @@ cat path_to_file
 add new_file_name
 ```
 
+- Create new directory in current working directory:
+
+```baash
+mkdir new_directory_name
+```
+
 - Rename file (content should remain unchanged):
 
 ```bash

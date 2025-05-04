@@ -16,6 +16,7 @@ import osCpus from '../commandsOperatingSystemInfo/cpus/cpus.js';
 import osHomeDir from '../commandsOperatingSystemInfo/homedir/homedir.js';
 import osUsername from '../commandsOperatingSystemInfo/username/username.js';
 import osArchitecture from '../commandsOperatingSystemInfo/architecture/architecture.js';
+import mkdir from "../commandsBasic/mkdir/mkdir.js";
 
 const commandOptions = async (command) => {
   const [operation, ...args] = command.split(' ');
@@ -30,7 +31,7 @@ const commandOptions = async (command) => {
         : console.log(colorize('Invalid input', 'red'));
       break;
     case 'ls':
-      listOfAllFiles();
+      await listOfAllFiles();
       break;
     case 'cat':
       args.length === 1
@@ -41,6 +42,11 @@ const commandOptions = async (command) => {
       args.length === 1
         ? await add(args[0])
         : console.log(colorize('Invalid input', 'red'));
+      break;
+    case 'mkdir':
+      args.length === 1
+          ? await mkdir(args[0])
+          : console.log(colorize('Invalid input', 'red'));
       break;
     case 'rn':
       args.length === 2
